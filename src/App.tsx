@@ -1,8 +1,10 @@
+import List from "./components/list/List";
+
 function App() {
   return (
-    <>
-      <div>This is a list!</div>
-    </>
+    <div className="container">
+      <List />
+    </div>
   );
 }
 
