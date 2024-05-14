@@ -19,14 +19,16 @@ import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 import Icons from "../icons";
 import { useState } from "react";
 import { allItems } from "./data";
-import useList from "./useList";
 import { Item } from "./types";
 import ListItem from "./ListItem";
 import SortableListItem from "./SortableListItem";
+import { useUpdateMyPresence } from "../../../liveblocks.config";
+import useList from "./useList";
 
 export default function List() {
+  const updateMyPresence = useUpdateMyPresence();
   const [activeItem, setActiveItem] = useState<Item | null>(null);
-  const { items, addItem, moveItem, deleteItem } = useList();
+  const { items, addItem, deleteItem, moveItem } = useList();
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
@@ -41,6 +43,7 @@ export default function List() {
   function handleDragStart(event: DragStartEvent) {
     const { active } = event;
     setActiveItem(items.find((item) => item.id === active.id) || null);
+    updateMyPresence({ itemId: String(active.id) });
   }
 
   function handleDragEnd(event: DragEndEvent) {
@@ -48,12 +51,21 @@ export default function List() {
 
     if (active.id !== over?.id) {
       moveItem(
-        String(active.id),
+        items.findIndex((item) => item.id === active.id),
         items.findIndex((item) => item.id === over!.id)
       );
     }
     setActiveItem(null);
+    updateMyPresence({ itemId: null });
   }
+
+  const handleAdd = () => {
+    const itemToAdd = allItems.find(
+      (item) => !items.some((i) => i.id === item.id)
+    );
+    if (!itemToAdd) return;
+    addItem(itemToAdd);
+  };
 
   return (
     <DndContext
@@ -63,11 +75,18 @@ export default function List() {
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <SortableContext items={items} strategy={verticalListSortingStrategy}>
+      <SortableContext
+        items={items as Item[]}
+        strategy={verticalListSortingStrategy}
+      >
         <div className="list">
+          <div className="list-header">
+            <h2>Item List</h2>
+            <p>Add, remove and sort items by dragging.</p>
+          </div>
           <button
             className="add-button"
-            onClick={() => addItem()}
+            onClick={handleAdd}
             disabled={items.length === allItems.length}
           >
             <Icons.plusCircle style={{ width: 20 }} />

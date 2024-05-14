@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { allItems, defaultItems } from "./data";
 
-export default function useList() {
+export default function useReactList() {
   const [items, setItems] = useState([...defaultItems]);
 
   const moveItem = (id: string, toIndex: number) => {

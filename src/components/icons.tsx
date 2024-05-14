@@ -1,4 +1,44 @@
 const Icons = {
+  user: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      {...props}
+    >
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  ),
+  liveblocksIcon: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      width="120"
+      height="120"
+      viewBox="0 0 120 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M81 27H0L24 51V84L81 27Z"
+        fill="black"
+      />
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M39 93H120L96 69V36L39 93Z"
+        fill="black"
+      />
+    </svg>
+  ),
   liveblocksLogo: (props: React.SVGProps<SVGSVGElement>) => (
     <svg
       width="384"
