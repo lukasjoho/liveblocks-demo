@@ -10,13 +10,7 @@ function App() {
         itemId: null,
       }}
       initialStorage={{
-        items: new LiveList([
-          {
-            id: "1",
-            name: "Item 1",
-            color: "#fca5a5",
-          },
-        ]),
+        items: new LiveList([]),
       }}
     >
       <ClientSideSuspense fallback={<div>Loading…</div>}>

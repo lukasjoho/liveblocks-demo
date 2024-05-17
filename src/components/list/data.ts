@@ -37,5 +37,5 @@ export const allItems: Item[] = [
     color: "#f9a8d4",
   },
 ];
-//include last 3 items of allItems in defaultItems for any possible length of the array
-export const defaultItems: Item[] = allItems.slice(0, 3).reverse();
+
+export const defaultItems: Item[] = allItems.slice(0, 1).reverse();

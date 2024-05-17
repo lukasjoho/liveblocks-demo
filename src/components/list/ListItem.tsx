@@ -26,13 +26,11 @@ const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
         <AnimatePresence>
           {users.map(({ connectionId, presence }) => {
             if (presence.itemId == item.id) {
-              //add tthe background color. let the color fade out after it is being removed
-
               return (
                 <motion.div
                   className="list-item-selection"
                   style={{
-                    background: COLORS[connectionId % COLORS.length] + "50",
+                    background: COLORS[connectionId % COLORS.length] + "75",
                   }}
                   key={item.id + connectionId}
                   initial={{

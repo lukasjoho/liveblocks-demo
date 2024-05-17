@@ -61,6 +61,7 @@ body {
 .avatars {
   display: flex;
   gap: 4px;
+  margin-left: auto;
 }
 
 .avatar {
@@ -109,8 +110,6 @@ body {
 
 .list-item-selection {
   position: absolute;
-
-  background: #ff000050;
   top: -4px;
   left: -4px;
   right: -4px;
@@ -156,5 +155,5 @@ button {
   justify-items: center;
   height: 100dvh;
   padding: 0 16px;
-  padding-top: 32px;
+  padding-top: 0px;
 }

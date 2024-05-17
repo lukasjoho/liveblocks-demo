@@ -26,9 +26,12 @@ import { useUpdateMyPresence } from "../../../liveblocks.config";
 import useList from "./useList";
 
 export default function List() {
-  const updateMyPresence = useUpdateMyPresence();
-  const [activeItem, setActiveItem] = useState<Item | null>(null);
   const { items, addItem, deleteItem, moveItem } = useList();
+
+  const updateMyPresence = useUpdateMyPresence();
+
+  const [activeItem, setActiveItem] = useState<Item | null>(null);
+
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
