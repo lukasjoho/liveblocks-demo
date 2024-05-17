@@ -18,12 +18,12 @@ import {
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 import Icons from "../icons";
 import { useState } from "react";
-import { allItems } from "./data";
-import { Item } from "./types";
+import { allItems } from "../../lib/data";
+import { Item } from "../../lib/types";
 import ListItem from "./ListItem";
 import SortableListItem from "./SortableListItem";
 import { useUpdateMyPresence } from "../../../liveblocks.config";
-import useList from "./useList";
+import useList from "../../lib/useList";
 
 export default function List() {
   const { items, addItem, deleteItem, moveItem } = useList();

@@ -1,6 +1,6 @@
 import { LiveList, createClient } from "@liveblocks/client";
 import { createRoomContext, createLiveblocksContext } from "@liveblocks/react";
-import { Item } from "./src/components/list/types";
+import { Item } from "./src/lib/types";
 
 const client = createClient({
   publicApiKey:

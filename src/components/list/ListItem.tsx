@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
-import { Item } from "./types";
+import { Item } from "../../lib/types";
 import { AnimatePresence, motion } from "framer-motion";
 import Icons from "../icons";
 import { useOthers } from "../../../liveblocks.config";
-import { COLORS } from "../../constants";
+import { COLORS } from "../../lib/constants";
 
 export interface ListItemProps {
   item: Item;

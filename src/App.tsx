@@ -1,6 +1,6 @@
 import { RoomProvider } from "../liveblocks.config";
 import { ClientSideSuspense } from "@liveblocks/react";
-import Room from "./components/Room";
+import Room from "./components/layout/Room";
 import { LiveList } from "@liveblocks/client";
 function App() {
   return (

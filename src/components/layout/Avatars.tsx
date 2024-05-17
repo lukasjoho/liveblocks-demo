@@ -1,7 +1,7 @@
 import React from "react";
-import { useOthersMapped, useSelf } from "../../liveblocks.config";
-import { COLORS } from "../constants";
-import Icons from "./icons";
+import { useOthersMapped, useSelf } from "../../../liveblocks.config";
+import { COLORS } from "../../lib/constants";
+import Icons from "../icons";
 
 const Avatars = React.memo(function Avatars() {
   const me = useSelf();

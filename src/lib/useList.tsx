@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { useState } from "react";
-import { useMutation, useStorage } from "../../../liveblocks.config";
+import { useMutation, useStorage } from "../../liveblocks.config";
 import { Item } from "./types";
 import { allItems, defaultItems } from "./data";
 
@@ -26,7 +26,7 @@ export default function useList() {
     setItems((items) => items.filter((item) => item.id !== id));
   };
 
-  //--- LIVEBLOCKS REALTIME HOOKS ---
+  //--- LIVEBLOCKS REALTIME HOOKS (JUST REPLACE)---
 
   // const items = useStorage((root) => root.items);
 
